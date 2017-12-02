@@ -1,0 +1,48 @@
+<md-card id="categories-menu">
+  <div id="categories-wrapper" #menu>
+    <a md-button class="category-link" [routerLink]="baseUrl" [queryParams]="category.params" *ngFor="let category of visibleCategories"
+      [class.active]="category.id === activeId" [style.width]="category.width">{{ category.label }}</a>
+  </div>
+  <span *ngIf="hasMoreCategories">
+    <button id="more-categories" mat-icon-button [matMenuTriggerFor]="extraMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #extraMenu="matMenu" class="scrollable">
+      <a mat-menu-item *ngFor="let hiddenCategory of moreCategories" [routerLink]="baseUrl" [queryParams]="hiddenCategory.params">{{ hiddenCategory.label }}</a>
+    </mat-menu>
+  </span>
+</md-card>
+
+<md-card id="filter-menu">
+  <div id="sub-header" #menu>
+    <mat-chip-list>
+      <mat-chip class="chip">
+        <span class="param-label">Size: XS</span>
+        <mat-icon mdChipRemove class="chip-icon">cancel</mat-icon>
+      </mat-chip>
+      <mat-chip class="chip">
+        <span class="param-label">Color: Blue</span>
+        <mat-icon mdChipRemove class="chip-icon">cancel</mat-icon>
+      </mat-chip>
+      <mat-chip class="chip">
+        <span class="param-label">Category: Mens</span>
+        <mat-icon mdChipRemove class="chip-icon">cancel</mat-icon>
+      </mat-chip>
+      <mat-chip class="chip">
+        <span class="param-label">Test Chip</span>
+        <mat-icon mdChipRemove class="chip-icon">cancel</mat-icon>
+      </mat-chip>
+
+
+
+      <mat-chip *ngFor="let queryItem of query" class="chip">
+        <span class="param-label">{{ queryItem?.label }}:</span>
+        <span class="param-value">{{ queryItem?.value }}</span>
+        <mat-icon mdChipRemove class="chip-icon">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+    <mat-menu #extraMenu="matMenu" class="scrollable">
+      <a mat-menu-item *ngFor="let hiddenCategory of moreCategories" [routerLink]="baseUrl" [queryParams]="hiddenCategory.params">{{ hiddenCategory.label }}</a>
+    </mat-menu>
+</md-card>

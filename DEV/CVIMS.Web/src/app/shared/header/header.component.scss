@@ -1,0 +1,106 @@
+@import '~@angular/material/_theming';
+@import '../../../common';
+#header {
+    @include red-gradient();
+}
+
+#logo {
+    height: 64px;
+    padding: 0px 24px;
+    background-color: #fff;
+    color: $primary-color;
+}
+
+#cart-link {
+    position: absolute;
+    top: 0;
+    right: 180px;
+}
+
+#cart-icon {
+    font-size: 36px;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    padding: 14px 28px;
+    background-color: $dark-accent-color;
+    color: #fff;
+}
+
+#cart-icon:hover {
+    background-color: #fff !important;
+    color: $primary-color !important;
+}
+
+#notifications-icon {
+    right: 88px;
+    background-color: $light-accent-color;
+    color: #fff;
+}
+
+.sidebar-toggle {
+    font-size: 36px;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    padding: 14px 28px;
+    position: absolute;
+}
+
+.sidebar-toggle:hover {
+    background-color: #fff !important;
+    color: $primary-color !important;
+}
+
+.mat-toolbar {
+    position: fixed;
+    padding: 0;
+    z-index: 10;
+}
+
+.section-link {
+    height: 36px;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+    padding: 14px 28px;
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .5);
+    /* 50% white from bottom */
+}
+
+.section-link:hover {
+    padding: 12px 28px;
+    border-bottom: 4px solid $dark-accent-color;
+}
+
+#account-preview.mat-icon-button {
+    position: absolute;
+    right: 0px;
+    padding: 18px 60px 14px 28px;
+    height: 64px;
+    width: 64px;
+    border-radius: 0%;
+    mat-icon {
+        font-size: 36px;
+        height: 36px;
+        width: 36px;
+    }
+}
+
+#account-preview.mat-icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: $light-accent-color;
+}
+
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-field {
+    width: 100%;
+}

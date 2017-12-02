@@ -1,0 +1,99 @@
+@import '~@angular/material/_theming';
+$material-primary-color: (
+    50: #ff5f6b,
+    100: #ff4c58,
+    200: #ff3846,
+    300: #ff2434,
+    400: #ff1122,
+    500: #d5000f,
+    600: #fc0012,
+    700: #e90010,
+    800: #d5000f,
+    900: #c1000e,
+    A100: #ef0011,
+    A200: #ff091a,
+    A400: #bc000d,
+    A700: #a2000b,
+    contrast: (
+      50: $black-87-opacity,
+      100: $black-87-opacity,
+      200: $black-87-opacity,
+      300: $black-87-opacity,
+      400: $black-87-opacity,
+      500: white,
+      600: white,
+      700: white,
+      800: $white-87-opacity,
+      900: $white-87-opacity,
+      A100: $black-87-opacity,
+      A200: white,
+      A400: white,
+      A700: white,
+    )
+  );
+$material-accent-color: (
+    50: #ebebeb,
+    100: #d7d7d7,
+    200: #c4c4c4,
+    300: #b0b0b0,
+    400: #9d9d9d,
+    500: #898989,
+    600: #757575,
+    700: #626262,
+    800: #4e4e4e,
+    900: #3b3b3b,
+    A100: #e5e5e5,
+    A200: #cccccc,
+    A400: #444444,
+    A700: #333333,
+    contrast: (
+      50: $black-87-opacity,
+      100: $black-87-opacity,
+      200: $black-87-opacity,
+      300: $black-87-opacity,
+      400: $black-87-opacity,
+      500: $black-87-opacity,
+      600: $black-87-opacity,
+      700: $black-87-opacity,
+      800: white,
+      900: white,
+      A100: $black-87-opacity,
+      A200: $black-87-opacity,
+      A400: $black-87-opacity,
+      A700: $black-87-opacity,
+    )
+  );
+$primary-color: mat-color($material-primary-color, 500);
+$accent-color: mat-color($material-accent-color, 500);
+$light-accent-color: mat-color($material-accent-color, A200);
+$dark-accent-color: mat-color($material-accent-color, A700);
+$success-color: green;
+$error-color: red;
+$warning-color: yellow;
+$container-color: #fff;
+$scrollbar-color: $light-accent-color;
+$scrollbar-background-color: $dark-accent-color;
+
+@mixin black-gradient {
+  background: #000000; /* Old browsers */
+  background: -moz-linear-gradient(top, #000000 0%, #191919 55%, #323232 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #000000 0%,#191919 55%,#323232 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #000000 0%,#191919 55%,#323232 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#323232',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin grey-gradient {
+  background: #626262; /* Old browsers */
+  background: -moz-linear-gradient(top, #626262 1%, #898989 36%, #b0b0b0 73%, #cccccc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #626262 1%,#898989 36%,#b0b0b0 73%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #626262 1%,#898989 36%,#b0b0b0 73%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#626262', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin red-gradient {
+  background: #c1000e; /* Old browsers */
+  background: -moz-linear-gradient(top, #c1000e 0%, #e90010 59%, #d5000f 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c1000e 0%,#e90010 59%,#d5000f 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c1000e 0%,#e90010 59%,#d5000f 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1000e', endColorstr='#d5000f',GradientType=0 ); /* IE6-9 */
+}

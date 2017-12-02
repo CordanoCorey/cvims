@@ -1,0 +1,14 @@
+<md-card id="categories-menu">
+  <div id="categories-wrapper" #menu>
+    <a md-button class="category-link" [routerLink]="baseUrl" [queryParams]="category.params" *ngFor="let category of visibleCategories"
+      [class.active]="category.id === activeId" [style.width]="category.width">{{ category.label }}</a>
+  </div>
+  <span *ngIf="hasMoreCategories">
+    <button id="more-categories" mat-icon-button [matMenuTriggerFor]="extraMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #extraMenu="matMenu" class="scrollable">
+      <a mat-menu-item *ngFor="let hiddenCategory of moreCategories" [routerLink]="baseUrl" [queryParams]="hiddenCategory.params">{{ hiddenCategory.label }}</a>
+    </mat-menu>
+  </span>
+</md-card>

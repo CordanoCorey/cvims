@@ -1,0 +1,121 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+.product-in-stock {
+    mat-icon {
+        color: green;
+        font-size: 12pt;
+    }
+}
+
+.product-image {
+    @include mat-elevation(4);
+    width: 70%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.collection {
+    background: #F5F5F6;
+    line-height: 1.5rem;
+    padding-bottom: 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.collection .collection-item {
+    display: block;
+    transition: .25s;
+    background: #F5F5F6;
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h4 a {
+    text-decoration: none;
+    color: #000;
+}
+
+.total-price {
+    font-weight: bold;
+}
+
+.remove-item {
+    color: red;
+}
+
+.cart-item-details {
+    padding: 12px 24px;
+}
+
+.cart-item {
+    .cart-item-details {
+        min-height: 240px;
+    }
+    .quantity-in-cart {
+        width: 30%;
+    }
+    .bg-white {
+        background-color: white;
+    }
+    .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .flex-item {
+        width: 70%;
+        margin: 10px;
+        text-align: left;
+    }
+    .flex-item1 {
+        width: 30%;
+        margin: 10px;
+        text-align: right;
+    }
+    .product-description {
+        margin-top: 20px;
+    }
+}
+
+.cart-item-preview {
+    .cart-item-details {
+        height: 100%;
+    }
+    h4 {
+        font-size: 8pt;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 8pt;
+    }
+    .remove-item {
+        margin-top: 20px;
+    }
+    .quantity-in-cart {
+        width: 100%;
+    }
+    .product-price {
+        margin-top: 40px;
+    }
+    .bg-white {
+        background-color: white;
+    }
+    .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .flex-item {
+        width: 60%;
+        margin: 10px;
+        text-align: left;
+    }
+    .flex-item1 {
+        float: left;
+        padding: 0;
+        margin: 0;
+        width: 50%;
+    }
+}

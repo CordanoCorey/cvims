@@ -1,0 +1,9 @@
+
+<a [routerLink]="productLink">
+  <img [alt]="productDescription" [src]="productImageSrc">
+  <mat-grid-tile-footer>
+    <h5 mat-line>{{ productDescription }}</h5>
+    <h5 mat-line>$ {{ retailPrice }}</h5>
+    <mat-icon>navigate_next</mat-icon>
+  </mat-grid-tile-footer>
+</a>

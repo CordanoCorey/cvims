@@ -1,0 +1,112 @@
+@import '../../../common';
+#categories-menu {
+  @include mat-elevation(4);
+    @include black-gradient();
+  border-radius: 8px 8px 8px 8px ;
+    margin: 0 8% 20px 8%;
+    padding: 0px 2%;
+    width: 80%;
+    display: block;
+    height: 62px;
+    overflow: hidden;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 20px 0px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12pt;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.category-link:hover,
+.category-link.active {
+    color: $accent-color;
+}
+
+#categories-wrapper {
+    width: calc(100% - 80px);
+    padding: 0;
+    margin: 0;
+    float: left;
+    height: 62px;
+}
+
+#more-categories {
+    width: 50px;
+    padding: 10px;
+    color: white;
+    float: right;
+}
+
+.mat-menu-panel {
+    background: linear-gradient(to bottom, #000000 0%, #191919 55%, #323232 100%) !important;
+    font-size: 12pt;
+    max-height: 400px;
+}
+
+.mat-menu-item {
+    color: white !important;
+}
+
+.mat-menu-item:hover:not([disabled]),
+.mat-menu-item:focus:not([disabled]),
+.mat-menu-item-highlighted:not([disabled]) {
+    background-color: black;
+    color: $accent-color;
+}
+#filter-menu {
+  background-color: $dark-accent-color;
+  margin: 0 18% 0 18%;
+  @include mat-elevation(4);
+  border-radius: 8px 8px 8px 8px ;
+  padding: 0px 2%;
+  width: 60%;
+  display: block;
+  height: 62px;
+  overflow: hidden;
+}
+
+#sub-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+ // background-color: $primary-color;
+  padding: 10px 10px 10px 10px ;
+  // padding-left: 20px;
+  // height: 80px;
+ // margin-bottom: 40px;
+ // position: relative;
+//  margin-top: 60px;
+  .chip {
+    //border-style: groove;
+    //border: groove #3A3A3A thin;
+
+    @include mat-elevation(4);
+    background: $accent-color;
+    color: white;
+    font: 400 14px/16px Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .chip-icon {
+    color: black;
+    padding-left: 15px;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .3);
+  }
+  .param-label {
+    margin-left: 5px;
+    letter-spacing: 1px;
+    color: black;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .3);
+    //font-weight: bold;
+    margin-right: 5px;
+  }
+  .param-value {
+    color: $light-accent-color;
+  }
+}

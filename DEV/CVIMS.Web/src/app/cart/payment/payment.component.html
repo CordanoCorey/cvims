@@ -1,0 +1,144 @@
+<div [formGroup]="form">
+  <div class="flex-container">
+
+    <!--Addresses-->
+    <div class="left-container" id="bill-to-address">
+      <!--Shipping Address-->
+      <mat-card class="collection">
+        <h4>Shipping Address</h4>
+      </mat-card>
+      <!--<mat-card class="separated" *ngIf="shipToAddress">-->
+      <mat-card>
+        <div class="collection-item flex-container">
+          <div id="selected-shipping-option">
+            <!--TODO: get previous form's shipping option and return the name-->
+            <!--<p><b>Selected Shipping Option:</b> &nbsp; &nbsp; &nbsp; {{selectedShippingOption}} </p>-->
+            <p *ngIf="shipToAddress">
+              <b>Selected Shipping Option:</b> &nbsp; &nbsp; &nbsp; Ship To Address </p>
+            <p *ngIf="shipToStore">
+              <b>Selected Shipping Option:</b> &nbsp; &nbsp; &nbsp; Ship To Store </p>
+            <p *ngIf="shipToBuilding">
+              <b>Selected Shipping Option:</b> &nbsp; &nbsp; &nbsp; Ship To Building </p>
+          </div>
+          <div id="shipping-address" *ngIf="shipToAddress">
+            <p mat-line>{{ shippingAddress?.streetAddress }}</p>
+            <p mat-line>{{ shippingCityStateZip }}</p>
+            <mat-checkbox style="margin-left:10px;" (change)="changeUseShippingAddress($event)">
+              <p>Use this address</p>
+            </mat-checkbox>
+            <!--TODO: On click this will autofill the billing address with the previous form's shipping address-->
+          </div>
+          <div id="no-address" *ngIf="shipToStore || shipToBuilding">
+            <p mat-line>Billing Address Required</p>
+          </div>
+        </div>
+      </mat-card>
+      <!--End Shipping Address-->
+
+      <!--Billing Address-->
+      <form formGroupName="billingAddress">
+        <mat-card class="collection" style="margin-top: 30px;">
+          <h4>Billing Address</h4>
+        </mat-card>
+        <mat-card>
+          <div class="collection-item flex-container">
+            <div id="billing-table">
+              <mat-form-field class="control">
+                <input matInput placeholder="Street Address" formControlName="streetAddress">
+              </mat-form-field>
+              <mat-form-field class="control">
+                <input matInput placeholder="Address 2" formControlName="address2">
+              </mat-form-field>
+              <mat-form-field class="control">
+                <input matInput placeholder="City" formControlName="city">
+              </mat-form-field>
+              <mat-form-field class="control">
+                <mat-select placeholder="State" formControlName="stateId">
+                  <mat-option *ngFor="let state of states" [value]="state.id">
+                    {{ state.label }} ({{ state.name }})
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="control">
+                <input #zipCode matInput maxlength="5" placeholder="Zip Code" formControlName="zipCode">
+                <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card>
+      </form>
+      <!--End Billing Address-->
+    </div>
+    <!--End Addresses-->
+
+    <!--Card Information-->
+    <div class="right-container">
+      <mat-card class="collection" style="margin-left: 20px;">
+        <h4>Card Information</h4>
+      </mat-card>
+      <mat-card style="margin-left: 20px;">
+        <div class="collection-item flex-container">
+          <div id="sq-ccbox" xmlns="http://www.w3.org/1999/html">
+            <!--You should replace the action attribute of the form with the path of
+                the URL you want to POST the nonce to (for example, "/process-card")-->
+            <form id="nonce-form" novalidate (submit)="onSubmit($event)" formGroupName="cardInfo">
+              <table id="payment-table">
+                <tbody>
+                  <tr>
+                    <td>Card Number:</td>
+                    <td>
+                      <mat-form-field style="width: 80%;">
+                        <input matInput type="number" id="sq-card-number">
+                      </mat-form-field>
+                      <!--<div id="sq-card-number"></div>-->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> CVV:</td>
+                    <td>
+                      <mat-form-field style="width: 80%;">
+                        <input matInput type="number" id="sq-cvv">
+                      </mat-form-field>
+                      <!--<div id="sq-cvv"></div>-->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Expiration Date: </td>
+                    <td>
+                      <mat-form-field style="width: 80%;">
+                        <input matInput type="number" id="sq-expiration-date">
+                      </mat-form-field>
+                      <!--<div id="sq-expiration-date"></div>-->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zip Code:</td>
+                    <td>
+                      <mat-form-field style="width: 80%;">
+                        <input matInput type="number" maxlength="5" id="sq-postal-code">
+                        <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
+                      </mat-form-field>
+                      <!--<div id="sq-postal-code"></div>-->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <button mat-button id="sq-creditcard" style="" onclick="requestCardNonce(event)">
+                        Use this credit / debit card
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!--After a nonce is generated it will be assigned to this hidden input field.-->
+              <input type="hidden" id="card-nonce" formControlName="nonce">
+            </form>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <!--End Card Information-->
+
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div id="shipping">
+  <form [formGroup]="form">
+
+    <mat-radio-group formControlName="shippingOptionId">
+      <mat-radio-button *ngFor="let option of shippingOptions" [value]="option.id">
+        {{ option.label }}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <div id="store-pickup" *ngIf="storePickup">
+      The item will be held in store for pickup.
+    </div>
+
+    <!-- Ship to Address -->
+    <div *ngIf="shipToAddress" id="ship-to-address" formGroupName="shipToAddress">
+      <mat-form-field class="control">
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <input matInput placeholder="Street Address" formControlName="streetAddress">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <input matInput placeholder="City" formControlName="city">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <mat-select placeholder="State" formControlName="stateId">
+          <mat-option *ngFor="let state of states" [value]="state.id">
+            {{ state.label }} ({{ state.name }})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="control">
+        <input #zipCode matInput maxlength="5" placeholder="Zip Code" formControlName="zipCode">
+        <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="control">
+        <span matPrefix>+1 &nbsp;</span>
+        <input type="tel" matInput placeholder="Home Phone" formControlName="homePhone">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <span matPrefix>+1 &nbsp;</span>
+        <input type="tel" matInput placeholder="Cell Phone" formControlName="cellPhone">
+      </mat-form-field>
+    </div>
+    <!-- End Ship to Address -->
+
+    <!-- Ship to Building -->
+    <div *ngIf="shipToBuilding" id="ship-to-building" formGroupName="shipToBuilding">
+      <mat-form-field class="control">
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <input matInput placeholder="Building Name" formControlName="buildingName">
+      </mat-form-field>
+      <mat-form-field class="control">
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <!-- End Ship to Building -->
+
+  </form>
+</div>

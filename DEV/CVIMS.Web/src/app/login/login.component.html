@@ -1,0 +1,29 @@
+<body id="wrapper">
+<div class="flex-container" style="margin:0 auto; margin-top:250px; justify-content: center;">
+  <form [formGroup]="form" iuForm style="width:80%">
+  <img src="../../assets/images/transparent-logo.png" height="auto" width="306" style="margin-top: 100px;"/>
+    <div style="width:100%;">
+      <mat-form-field style="width:50%; margin-top:40px;">
+        <input matInput placeholder="EMAIL" type="email" value="EMAIL" class="input-style">
+        <!--<mat-error *ngIf="username.hasError('pattern')" style="color:#d5000f">-->
+        <!--Please enter a valid email address-->
+        <!--</mat-error>-->
+        <!--<mat-error *ngIf="username.hasError('required')" style="color:#d5000f">-->
+        <!--Email is <strong>required</strong>-->
+        <!--</mat-error>-->
+      </mat-form-field>
+    </div>
+    <mat-form-field style="width:50%;">
+      <input matInput placeholder="PASSWORD" type="password" value="PASSWORD" class="input-style">
+      <!--<mat-error *ngIf="password.hasError('required')" style="color:#d5000f">-->
+      <!--Password is <strong>required</strong>-->
+      <!--</mat-error>-->
+    </mat-form-field>
+    <div style="width:60%; align-self: center; margin:0 auto;">
+      <button type="button" class="button button-color">LOGIN
+        <!--<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>-->
+      </button>
+    </div>
+  </form>
+  </div>
+</body>

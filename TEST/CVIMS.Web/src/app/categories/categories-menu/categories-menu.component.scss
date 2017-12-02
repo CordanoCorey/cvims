@@ -1,0 +1,57 @@
+@import '../../../common';
+#categories-menu {
+    @include black-gradient();
+    margin: 0 8% 20px 8%;
+    padding: 0px 2%;
+    width: 80%;
+    display: block;
+    height: 62px;
+    overflow: hidden;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 20px 0px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12pt;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.category-link:hover,
+.category-link.active {
+    color: $accent-color;
+}
+
+#categories-wrapper {
+    width: calc(100% - 80px);
+    padding: 0;
+    margin: 0;
+    float: left;
+    height: 62px;
+}
+
+#more-categories {
+    width: 50px;
+    padding: 10px;
+    color: white;
+    float: right;
+}
+
+.mat-menu-panel {
+    background: linear-gradient(to bottom, #000000 0%, #191919 55%, #323232 100%) !important;
+    font-size: 12pt;
+    max-height: 400px;
+}
+
+.mat-menu-item {
+    color: white !important;
+}
+
+.mat-menu-item:hover:not([disabled]),
+.mat-menu-item:focus:not([disabled]),
+.mat-menu-item-highlighted:not([disabled]) {
+    background-color: black;
+    color: $accent-color;
+}

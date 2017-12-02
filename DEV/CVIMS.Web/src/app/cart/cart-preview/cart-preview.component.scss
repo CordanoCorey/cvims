@@ -1,0 +1,67 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+h4 {
+    font-size: 8pt;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 8pt;
+}
+
+#add-to-cart {
+    margin-top: 20px;
+}
+
+div {
+    border: none;
+}
+
+#product-image {
+    @include mat-elevation(4);
+    width: 70%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.collection {
+    background: #F5F5F6;
+    line-height: 1.5rem;
+    padding-bottom: 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.collection .collection-item {
+    display: block;
+    transition: .25s;
+    background: #F5F5F6;
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap; //background-color: DodgerBlue;
+}
+
+.flex-item {
+    width: 60%;
+    margin: 10px;
+    text-align: left;
+}
+
+.flex-item1 {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}

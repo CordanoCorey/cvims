@@ -1,0 +1,17 @@
+<app-header (logout)="logout()" (toggleSidebar)="toggleSidebar()"></app-header>
+
+<mat-sidenav-container>
+
+  <!-- sidenav -->
+  <mat-sidenav [opened]="sidenavOpened" mode="side" #sidenav class="scrollable">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <!-- end sidenav -->
+
+  <!-- primary content -->
+  <div id="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+    <ng-content></ng-content>
+  </div>
+  <!-- end primary content -->
+
+</mat-sidenav-container>

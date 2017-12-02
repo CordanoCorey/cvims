@@ -1,0 +1,4 @@
+<div id="cart-details">
+  <cv-cart-item *ngFor="let control of controls" [form]="control" [cartItem]="findCartItem(control)" [preview]="preview" (removeFromCart)="removeFromCart.emit($event)"
+    (updateCartItem)="updateCartItem.emit($event)"></cv-cart-item>
+</div>

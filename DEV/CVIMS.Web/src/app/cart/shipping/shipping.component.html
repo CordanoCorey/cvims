@@ -1,0 +1,115 @@
+<div id="shipping">
+  <form [formGroup]="form">
+    <mat-card class="collection">
+      <h4>Select Shipping Option</h4>
+    </mat-card>
+    <mat-card>
+      <div class="collection-item flex-container">
+          <mat-radio-group formControlName="shippingOptionId">
+            <mat-radio-button *ngFor="let option of shippingOptions" [value]="option.id">
+             <p>{{ option.label }}</p>
+            </mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </mat-card>
+
+    <!-- Store Pickup -->
+    <mat-card class="separated" *ngIf="storePickup">
+      <div class="collection-item flex-container">
+        <div  id="store-pickup" formGroupName="storePickup">
+          <mat-form-field class="control">
+            <input matInput placeholder="First Name" formControlName="firstName">
+          </mat-form-field>
+          <mat-form-field class="control">
+            <input matInput placeholder="Last Name" formControlName="lastName">
+          </mat-form-field>
+          <mat-form-field class="control">
+            <input matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field class="control">
+            <input matInput placeholder="Location" disabled value="The item will be held in store for pickup.">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card>
+    <!-- End store pickup -->
+
+
+    <!-- Ship to Address -->
+    <mat-card class="separated" *ngIf="shipToAddress">
+      <div class="collection-item flex-container">
+    <div  id="ship-to-address" formGroupName="shipToAddress">
+      <section>
+      <mat-form-field class="control width-30">
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="control width-30">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+      </section>
+
+      <section>
+        <mat-form-field class="control width-30">
+          <input matInput placeholder="Street Address" formControlName="streetAddress">
+        </mat-form-field>
+        <mat-form-field class="control width-30">
+          <input matInput placeholder="Address 2" formControlName="address2">
+        </mat-form-field>
+      </section>
+
+      <section>
+        <mat-form-field class="control width-20" style="width: 20%;">
+          <input matInput placeholder="City" formControlName="city">
+        </mat-form-field>
+        <mat-form-field class="control" style="width: 18%;">
+          <mat-select placeholder="State" formControlName="stateId">
+            <mat-option *ngFor="let state of states" [value]="state.id">
+              {{ state.label }} ({{ state.name }})
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="control width-20">
+          <input #zipCode matInput maxlength="5" placeholder="Zip Code" formControlName="zipCode">
+          <mat-hint align="end">{{zipCode.value.length}} / 5</mat-hint>
+        </mat-form-field>
+      </section>
+
+      <section>
+        <mat-form-field class="control width-30">
+          <span matPrefix>+1 &nbsp;</span>
+          <input type="tel" matInput placeholder="Home Phone" formControlName="homePhone">
+        </mat-form-field>
+        <mat-form-field class="control width-30">
+          <span matPrefix>+1 &nbsp;</span>
+          <input type="tel" matInput placeholder="Cell Phone" formControlName="cellPhone">
+        </mat-form-field>
+      </section>
+    </div>
+      </div>
+    </mat-card>
+    <!-- End Ship to Address -->
+
+
+    <!-- Ship to Building -->
+    <mat-card class="separated" *ngIf="shipToBuilding">
+      <div class="collection-item flex-container">
+        <div  id="ship-to-building" formGroupName="shipToBuilding">
+          <mat-form-field class="control">
+            <input matInput placeholder="First Name" formControlName="firstName">
+          </mat-form-field>
+          <mat-form-field class="control">
+            <input matInput placeholder="Last Name" formControlName="lastName">
+          </mat-form-field>
+          <mat-form-field class="control">
+            <input matInput placeholder="Building Name" formControlName="buildingName">
+          </mat-form-field>
+          <mat-form-field class="control">
+            <input matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card>
+    <!-- End Ship to Building -->
+
+  </form>
+</div>

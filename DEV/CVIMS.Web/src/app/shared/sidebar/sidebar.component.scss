@@ -1,0 +1,27 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+#sidebar {
+    height: 100%;
+    height: calc(100% - 20px);
+    margin-top: 60px;
+    padding: 0px;
+    padding-top: 20px;
+    width: 320px;
+    .sidebar-link {
+        @include black-gradient();
+        color: #fff;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        margin: 0;
+        padding: 20px;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    .sidebar-link:hover {
+        font-weight: bold;
+    }
+}
+
+

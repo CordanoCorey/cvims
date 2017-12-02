@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-icon id="sidebar-toggle" (click)="onToggleSidebar()">menu</mat-icon>
+  <img id="logo" src="assets/images/logo.png" />
+  <mat-menu #appMenu="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item> Settings </button>
+    <button mat-menu-item (click)="onLogout()"> Logout </button>
+  </mat-menu>
+  <button id="account-preview" (click)="toggleUser()" mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>

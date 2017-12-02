@@ -1,0 +1,36 @@
+@import '../../../common';
+#totals {
+    height: 60px;
+    min-width: 600px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    #subtotal {
+        width: 27%;
+    }
+    #tax {
+        width: 19%;
+    }
+    #shipping-cost {
+        width: 31%;
+    }
+    #total {
+        width: 23%;
+    }
+    .total {
+        float: left;
+        overflow: hidden;
+        height: 30px;
+        margin-top: 15px;
+    }
+    h3 {
+        float: left;
+        margin: 3px 6px;
+        color: $accent-color;
+    }
+    .total-dollars {
+        float: left;
+        margin: 0;
+        margin-top: 6px;
+    }
+}

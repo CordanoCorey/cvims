@@ -1,0 +1,17 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+
+#add-to-cart {
+background-color: $success-color;
+color: #fff;
+width: 100%;
+padding: 10px 0;
+  margin-top: 100%;
+bottom:0;
+  position:fixed;
+}
+
+#cart-details{
+  max-height: 720px; overflow: auto
+}

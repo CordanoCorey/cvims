@@ -1,0 +1,11 @@
+<div id="cart-details" class="scrollable">
+  <span *ngIf="!preview">
+    <cv-cart-item *ngFor="let item of cartItems" [cartItem]="item"></cv-cart-item>
+  </span>
+  <span *ngIf="preview">
+    <cv-cart-preview *ngFor="let item of cartItems" [cartItem]="item"></cv-cart-preview>
+    <button mat-button id="add-to-cart" class="cart-action" [routerLink]="cartLink">
+      <mat-icon>local_grocery_store</mat-icon> View Cart
+    </button>
+  </span>
+</div>

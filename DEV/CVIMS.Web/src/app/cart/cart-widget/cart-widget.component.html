@@ -1,0 +1,7 @@
+<div id="cart-widget" class="scrollable">
+  <cv-cart-details [formArray]="formArray" [cartItems]="cartItems$ | async" [preview]="true" [siteLocation]="siteLocation"
+    (removeFromCart)="removeFromCart($event)" (updateCartItem)="updateCartItem($event)"></cv-cart-details>
+  <button mat-button id="add-to-cart" class="cart-action" [routerLink]="cartLink">
+    <mat-icon>local_grocery_store</mat-icon> View Cart
+  </button>
+</div>

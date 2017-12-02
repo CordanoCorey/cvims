@@ -1,0 +1,44 @@
+<mat-card style="height: 100%">
+  <h4>{{ productName }}</h4>
+  <div class="collection-item flex-container">
+    <div class="flex-item1">
+      <img id="product-image" [src]="productImageSrc" />
+      <mat-form-field id="quantity-to-order" style="width: 100%;">
+        <input matInput type="number" placeholder="Change Quantity" value="1">
+        <mat-hint>Quantity in stock: {{ quantityInStock }}</mat-hint>
+      </mat-form-field>
+      <button mat-button id="add-to-cart">
+        <mat-icon>remove_circle</mat-icon>   Remove Item
+      </button>
+    </div>
+    <mat-card-content class="flex-item">
+      <!--<div *ngIf="hasProductDescription" id="product-decription" class="product-lookup" style="margin-top: 20px;">-->
+        <!--<p>Product Description: {{ productDescription }} </p>-->
+      <!--</div>-->
+      <div id="product-sku">
+        <p>Item Number: {{ sku }} </p>
+      </div>
+      <div *ngIf="hasSize" class="product-lookup">
+        <p>Size: {{ size }} </p>
+      </div>
+      <div *ngIf="inStock" id="product-instock">
+        <p>In Stock: <mat-icon style="color:green; font-size: 12pt;">done</mat-icon></p>
+      </div>
+      <div *ngIf="!inStock" id="product-outOfStock" >
+        <p>In Stock: <b>OUT OF STOCK</b></p>
+      </div>
+      <div id="product-price" style="margin-top: 40px; ">
+        <p>Product Price: {{ price | currency:'USD':true:'1.2' }} </p>
+      </div>
+
+      <div id="taxable">
+        <p>Tax: calculated Tax</p>
+      </div>
+      <div id="product-total">
+        <p>Total: {{ price | currency:'USD':true:'1.2'  }} </p>
+        <!--(price * quantity )+ tax-->
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>
+

@@ -1,0 +1,14 @@
+
+<a [routerLink]="productLink">
+  <img [alt]="productDescription" [src]="productImageSrc">
+  <mat-grid-tile-footer *ngIf="isSchoolStore">
+    <h5 mat-line>{{ productDescription }}</h5>
+    <h5 mat-line style="font-weight: bold">$ {{ retailPrice }}</h5>
+    <mat-icon>navigate_next</mat-icon>
+  </mat-grid-tile-footer>
+  <mat-grid-tile-footer *ngIf="isSupplyStore">
+    <h5 mat-line>{{ productName }} </h5>
+    <h3 mat-line> {{ sku }} <span style="margin-left: 60%">Qty: {{ quantityAvailable }}</span> </h3>
+    <mat-icon>navigate_next</mat-icon>
+  </mat-grid-tile-footer>
+</a>

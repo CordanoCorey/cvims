@@ -1,0 +1,33 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+#sub-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: $primary-color;
+    padding-left: 20px;
+    height: 80px;
+    margin-bottom: 40px;
+    position: relative;
+    margin-top: 60px;
+    .chip {
+        background: #000;
+        color: white;
+        font: 400 14px/16px Roboto, "Helvetica Neue", sans-serif;
+    }
+
+    .chip-icon {
+        padding-left: 15px;
+    }
+    .param-label {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+    .param-value {
+        color: $light-accent-color;
+    }
+}

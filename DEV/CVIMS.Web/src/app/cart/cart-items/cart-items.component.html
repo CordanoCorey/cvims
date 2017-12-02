@@ -1,0 +1,29 @@
+<iu-grid [model]="grid" height="420" [sort]="sort">
+
+  <!-- Product Name -->
+  <iu-grid-column [model]="productNameColumn" [templateRef]="productNameTemplate" width="360">
+    <ng-template #productNameTemplate let-productName="productName" let-productId="productId">
+      <a class="product-link" [routerLink]="getProductLink(productId)">
+        {{ productName }}
+      </a>
+    </ng-template>
+  </iu-grid-column>
+  <!-- End Product Name -->
+
+  <!-- Last Modified -->
+  <iu-grid-column [model]="lastModifiedDateColumn" filter="date" format="{0:d}" [templateRef]="lastModifiedDateTemplate" width="192">
+    <ng-template #lastModifiedDateTemplate let-lastModifiedDate="lastModifiedDate">
+      <div class="centered">{{ lastModifiedDate | date:'shortDate' }}</div>
+    </ng-template>
+  </iu-grid-column>
+  <!-- End Last Modified -->
+
+  <!-- Quantity -->
+  <iu-grid-column [model]="quantityColumn" [templateRef]="quantityTemplate" [filterable]="false" width="200">
+    <ng-template #quantityTemplate let-quantity="quantity">
+
+    </ng-template>
+  </iu-grid-column>
+  <!-- End Quantity -->
+
+</iu-grid>

@@ -1,0 +1,40 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+mat-sidenav {
+    @include mat-elevation(4);
+    overflow: hidden;
+    padding: 0;
+    background-color: #fff;
+    height: 100%;
+}
+
+mat-sidenav-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+mat-sidenav-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+cv-footer {
+    display: block;
+}
+
+#content {
+    padding: 0;
+    padding-bottom: 200px;
+    height: 100%;
+    // overflow-y: scroll;
+    // display: -webkit-box;
+    // display: -ms-flexbox;
+    // display: flex;
+    // -webkit-box-orient: vertical;
+    // -webkit-box-direction: normal;
+    // -ms-flex-direction: column;
+    // flex-direction: column;
+    background-image: url(/assets/images/dot_pattern.jpg);
+    background-position: 0px 0px;
+}

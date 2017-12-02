@@ -1,0 +1,66 @@
+<div id="product-view">
+  <div class="message message-top mat-button" [class.success-message]="inSuccessState" [class.error-message]="inErrorState"
+    *ngIf="showMessage">
+    <h4>{{ message }}</h4>
+  </div>
+
+  <div class="left">
+    <img id="product-image" [src]="productImageSrc" />
+
+    <mat-card class="container">
+      <mat-card-content>
+        <form iuForm [formGroup]="form" *ngIf="!isOutOfStock">
+          <mat-form-field id="product-size">
+            <mat-select placeholder="Size" formControlName="size">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field id="quantity-to-order">
+            <input type="number" min="0" [max]="maxQuantity" matInput placeholder="Quantity to Order" formControlName="quantity">
+            <mat-error>Please enter a positive integer.</mat-error>
+          </mat-form-field>
+        </form>
+        <div class="out-of-stock message error-message" *ngIf="isOutOfStock">
+          Item is out of stock.
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <button *ngIf="canAddToCart" mat-button id="add-to-cart" class="cart-action" (click)="onAddToCart()">
+      <mat-icon>local_grocery_store</mat-icon> Add To Cart
+    </button>
+
+    <button *ngIf="canRemoveFromCart" mat-button id="remove-from-cart" class="cart-action" (click)="onRemoveFromCart()">
+      <mat-icon>local_grocery_store</mat-icon> Remove From Cart
+    </button>
+
+  </div>
+
+  <div class="right">
+    <div id="product-name">
+      <cv-tile title="Product Name">{{ productName }}</cv-tile>
+    </div>
+    <div id="product-price">
+      <cv-tile title="Price">{{ price | currency:'USD':true:'1.2' }}</cv-tile>
+    </div>
+    <div *ngIf="hasProductDescription" id="product-decription" class="product-lookup">
+      <cv-tile title="Product Description">{{ productDescription }}</cv-tile>
+    </div>
+    <div id="product-sku">
+      <cv-tile title="Item Number">{{ sku }}</cv-tile>
+    </div>
+    <div id="product-instock">
+      <cv-tile title="Quantity In Stock">{{ quantityInStock }}</cv-tile>
+    </div>
+    <div *ngIf="hasSize" class="product-lookup">
+      <cv-tile title="Size">{{ size }}</cv-tile>
+    </div>
+
+    <div class="message message-bottom mat-button" [class.success-message]="inSuccessState" [class.error-message]="inErrorState"
+      *ngIf="showMessage">
+      <h4>{{ message }}</h4>
+    </div>
+
+  </div>

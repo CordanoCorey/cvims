@@ -1,0 +1,13 @@
+@import '~@angular/material/_theming';
+@import '../../../common';
+.mat-sidenav {
+    @include mat-elevation(4);
+    overflow: hidden;
+    padding: 0;
+    background-color: #fff;
+    height: 100%;
+}
+
+#content {
+    padding: 40px 0;
+}

@@ -1,0 +1,11 @@
+<cv-categories-menu [categories]="categories$ | async" [siteLocation]="siteLocation" [activeId]="categoryId">
+</cv-categories-menu>
+<div id="main-content">
+  <mat-card-content>
+    <mat-grid-list cols="3"  gutterSize="100">
+      <mat-grid-tile rowspan="1" *ngFor="let product of products$ | async">
+        <cv-product-preview [product]="product"></cv-product-preview>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</div>

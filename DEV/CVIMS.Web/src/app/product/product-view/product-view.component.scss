@@ -1,0 +1,88 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+#product-view {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.cart-action {
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#add-to-cart {
+    background-color: $success-color;
+}
+
+#remove-from-cart {
+    background-color: $error-color;
+}
+
+.left {
+    max-width: 300px;
+}
+
+.right {
+    width: calc(100% - 320px);
+}
+
+#product-image {
+    @include mat-elevation(4);
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#product-name {
+    width: 70%;
+    float: left;
+}
+
+#product-price {
+    width: 28%;
+    float: right;
+}
+
+#product-sku {
+    width: 60%;
+    float: left;
+}
+
+#product-in-stock {
+    width: 38%;
+    float: right;
+}
+
+.product-lookup {
+    width: 100%;
+    float: left;
+}
+
+#product-size {
+    margin-left: 5px;
+    width: 40%;
+    float: left;
+}
+
+#quantity-in-cart {
+    margin-right: 10px;
+    width: 40%;
+    float: right;
+}
+
+.container {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.container.mat-card {
+    padding-bottom: 32px;
+}
+
+.out-of-stock {
+    margin: 14px 42px !important;
+}

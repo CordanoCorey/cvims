@@ -1,0 +1,15 @@
+@import '../../../common';
+#footer {
+    @include black-gradient();
+    //padding: 20px;
+    min-height: 200px;
+    bottom: 0;
+    position: relative;
+    padding: 0;
+    z-index: 10;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}

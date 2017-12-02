@@ -1,0 +1,10 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../common';
+#product {
+    margin: 0;
+}
+
+#product-image {
+    max-width: 300px;
+}

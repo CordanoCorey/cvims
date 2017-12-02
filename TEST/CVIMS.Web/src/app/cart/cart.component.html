@@ -1,0 +1,65 @@
+<div id="main-content">
+  <mat-horizontal-stepper [linear]="isLinear">
+
+    <!-- Order Summary -->
+    <mat-step [stepControl]="orderForm">
+      <ng-template matStepLabel>Order Summary</ng-template>
+      <div class="stepper-content">
+        <cv-cart-details [form]="orderForm" [cartItems]="cartItems$ | async" [siteLocation]="siteLocation"></cv-cart-details>
+      </div>
+      <div class="stepper-footer">
+        <cv-totals [subtotal]="subtotal" [tax]="tax"></cv-totals>
+        <button class="link next" mat-button matStepperNext>
+          <mat-icon>chevron_right</mat-icon>Next</button>
+      </div>
+    </mat-step>
+    <!-- End Order Summary -->
+
+    <!-- Shipping Info -->
+    <mat-step [stepControl]="shippingForm">
+      <ng-template matStepLabel>Shipping Info</ng-template>
+      <div class="stepper-content">
+        <cv-shipping [form]="shippingForm" [shippingOptions]="lkpShippingOptions$ | async" [states]="lkpStates$ | async"></cv-shipping>
+      </div>
+      <div class="stepper-footer">
+        <button class="link back" mat-button matStepperPrevious>
+          <mat-icon>chevron_left</mat-icon>Back</button>
+        <cv-totals [subtotal]="subtotal" [tax]="tax"></cv-totals>
+        <button class="link next" mat-button matStepperNext>
+          <mat-icon>chevron_right</mat-icon>Next</button>
+      </div>
+    </mat-step>
+    <!-- End Shipping Info -->
+
+    <!-- Payment Info -->
+    <mat-step [stepControl]="paymentForm">
+      <ng-template matStepLabel>Payment Info</ng-template>
+      <div class="stepper-content">
+        <cv-payment [form]="paymentForm" [nonce]="nonce" (changeNonce)="changeNonce($event)"></cv-payment>
+      </div>
+      <div class="stepper-footer">
+        <button class="link back" mat-button matStepperPrevious>
+          <mat-icon>chevron_left</mat-icon>Back</button>
+        <cv-totals [subtotal]="subtotal" [tax]="tax"></cv-totals>
+        <button class="link next" mat-button matStepperNext>
+          <mat-icon>chevron_right</mat-icon>Next</button>
+      </div>
+    </mat-step>
+    <!-- End Payment Info -->
+
+    <!-- Review -->
+    <mat-step>
+      <ng-template matStepLabel>Review</ng-template>
+      <div class="stepper-content">
+        <cv-charge (submitCharge)="submitCharge($event)"></cv-charge>
+      </div>
+      <div class="stepper-footer">
+        <cv-totals [subtotal]="subtotal" [tax]="tax"></cv-totals>
+        <button class="link back" mat-button matStepperPrevious>
+          <mat-icon>chevron_left</mat-icon>Back</button>
+      </div>
+    </mat-step>
+    <!-- End Review -->
+
+  </mat-horizontal-stepper>
+</div>

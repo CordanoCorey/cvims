@@ -1,0 +1,18 @@
+<mat-toolbar id="header" color="primary" class="mat-elevation-z6">
+  <img id="logo" src="assets/images/full-logo.png" />
+  <a routerLink="/school-store" class="section-link mat-headline">School Store</a>
+  <a routerLink="/supply-store" class="section-link mat-headline">Supply Store</a>
+  <a routerLink="/warehouse" class="section-link mat-headline">Warehouse</a>
+  <a id="cart-link" (click)="onToggleSidebar()">
+    <mat-icon id="cart-icon">local_grocery_store</mat-icon>
+  </a>
+  <mat-icon id="notifications-icon" class="sidebar-toggle" (click)="onToggleSidebar()">notifications</mat-icon>
+  <mat-menu #appMenu="matMenu" [overlapTrigger]="false">
+    <a routerLink="/login" mat-menu-item> Login </a>
+    <a routerLink="/admin" mat-menu-item> Settings </a>
+    <button mat-menu-item (click)="onLogout()"> Logout </button>
+  </mat-menu>
+  <button id="account-preview" (click)="toggleUser()" mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>

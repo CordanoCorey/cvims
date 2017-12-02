@@ -1,0 +1,74 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+#shipping {
+    margin: 6px 0;
+}
+
+.separated {
+    margin-top: 12px;
+}
+
+.width-30 {
+    width: 30%;
+}
+
+.width-20 {
+    width: 20%;
+}
+
+div {
+    border: none;
+}
+
+.collection {
+    background: #F5F5F6;
+    line-height: 1.5rem;
+    padding-bottom: 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.collection .collection-item {
+    display: block;
+    transition: .25s;
+    background: #F5F5F6;
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-item2 {
+    width: 70%;
+    margin: 10px;
+    text-align: left;
+}
+
+.flex-item1 {
+    width: 30%;
+    margin: 10px;
+    text-align: right;
+}
+
+mat-radio-button {
+    margin: 10px;
+}
+
+p,
+#store-pickup,
+#ship-to-address,
+#ship-to-building {
+    margin: 10px;
+    font-size: 10pt;
+    font-weight: bold;
+}

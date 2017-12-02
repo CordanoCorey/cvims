@@ -1,0 +1,36 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+
+
+.collection {
+  background: #F5F5F6;
+  line-height: 1.5rem;
+  padding-bottom: 20px;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.collection .collection-item {
+  display: block;
+  transition: .25s;
+  background: #F5F5F6;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+.bg-white {
+  background-color: white;
+}
+h4{
+  color: #333;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, .5);
+  text-align: center;
+}
+#contact{
+  font-size: 10pt;
+  margin: 20px;
+}

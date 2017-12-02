@@ -1,0 +1,19 @@
+@import '../../../common';
+#totals {
+    height: 40px;
+    margin: 12px;
+    .total {
+        float: left;
+        margin-right: 20px;
+    }
+    h2 {
+        float: left;
+        margin: 0 12px;
+        color: $accent-color;
+    }
+    .total-dollars {
+        float: left;
+        margin: 0;
+        margin-top: 7px;
+    }
+}

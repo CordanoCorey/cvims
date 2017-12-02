@@ -1,0 +1,21 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+.tile {
+    @include mat-elevation(4);
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 0px;
+}
+
+.tile-title {
+    background-color: $accent-color;
+    @include black-gradient();
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.tile-content {
+    padding: 10px;
+}

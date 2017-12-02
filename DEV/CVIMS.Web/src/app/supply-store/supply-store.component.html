@@ -1,0 +1,14 @@
+<cv-container>
+  <!-- <cv-container [query]="query$ | async"> -->
+  <!-- <a routerLink="/supply-store/cart">Cart</a>
+    <a routerLink="/supply-store/orders">Orders</a>
+    <a routerLink="/supply-store/orders/1">Order</a>
+    <a routerLink="/supply-store/products">Products</a>
+    <a routerLink="/supply-store/products/1">Product</a> -->
+  <span class="container-content">
+    <router-outlet></router-outlet>
+  </span>
+  <span class="sidebar-content">
+    <cv-cart-widget></cv-cart-widget>
+  </span>
+</cv-container>

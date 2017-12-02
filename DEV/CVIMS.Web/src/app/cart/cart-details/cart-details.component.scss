@@ -1,0 +1,9 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+#cart-details {
+    cv-cart-item {
+        display: block;
+        margin: 6px 0;
+    }
+}

@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  align-self: center;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 14pt;
+  color: white;
+  text-align: center;
+}
+
+#wrapper {
+  width: 100%;
+  left: 0;
+  margin: 0;
+  padding: 5px;
+  background-color: black;
+  height: -webkit-fill-available;
+}
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+
+.input-style{
+  color: white;
+  padding: 10px;
+  height: 40px;
+  width: 80%;
+}
+
+.mat-input-placeholder {
+  margin-top: 5px;
+  color: white !important;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 200px;
+  width: 100%;
+}
+
+
+div.mat-input-underline.mat-form-field-underline{
+  background-color: rgb(239, 74, 58) !important;
+}
+.mat-form-field-underline{
+  background-color: rgb(239, 74, 58) !important;
+}
+.mat-form-field-placeholder{
+  color: rgb(239, 74, 58) !important;
+}
+
+.mat-input-invalid .mat-input-placeholder {
+  color: rgb(239, 74, 58) !important;
+}
+.mat-input-ripple {
+ visibility: hidden;
+  color: rgb(239, 74, 58);
+}
+.mat-input-invalid .mat-input-ripple {
+ background-color: rgb(239, 74, 58);
+}
+mat-error {
+  color: rgb(239, 74, 58);
+}
+
+.button {
+ position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  color: white;
+  font-size: 16px;
+  line-height: 20px;
+ -webkit-font-smoothing: antialiased;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.button-color {
+  border-radius: 5px;
+  border: 2px solid rgb(239, 74, 58);
+  padding: 10px;
+  margin-top:25px;
+  background: black;
+  width: 80%
+}
+
+.button-color:hover {
+  background: black;
+  color: rgb(239, 74, 58);
+  text-shadow: none;
+  border-radius: 5px;
+  border: 2px solid rgb(239, 74, 58);
+  padding: 10px; }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: none !important;
+  color: rgb(255, 255, 255) !important;
+}

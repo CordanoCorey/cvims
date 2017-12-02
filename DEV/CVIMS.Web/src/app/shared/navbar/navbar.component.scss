@@ -1,0 +1,52 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../../common';
+#sub-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: $primary-color;
+    padding: 10px 0px 0px 60px ;
+   // padding-left: 20px;
+   // height: 80px;
+    margin-bottom: 40px;
+    position: relative;
+    margin-top: 60px;
+    .chip {
+        background: #000;
+        color: white;
+        font: 400 14px/16px Roboto, "Helvetica Neue", sans-serif;
+    }
+
+    .chip-icon {
+        padding-left: 15px;
+    }
+    .param-label {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+    .param-value {
+        color: $light-accent-color;
+    }
+}
+
+.section-link {
+  //height: 36px;
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+  padding: 14px 28px;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, .3);
+  /* 50% white from bottom */
+}
+
+.section-link:hover {
+  padding: 14px 28px;
+  border-bottom: 4px solid $dark-accent-color;
+}

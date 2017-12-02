@@ -1,0 +1,24 @@
+<cv-header [siteLocation]="siteLocation$ | async" (logout)="logout()" (toggleSidebar)="toggleSidebar()"></cv-header>
+
+<mat-sidenav-container>
+
+  <!-- sidenav -->
+  <mat-sidenav [opened]="sidenavOpened" position="end" mode="side" #sidenav class="scrollable">
+    <cv-sidebar [siteLocation]="siteLocation$ | async">
+      <ng-content select=".sidebar-content"></ng-content>
+    </cv-sidebar>
+  </mat-sidenav>
+  <!-- end sidenav -->
+
+  <!-- primary content -->
+  <div id="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+    <cv-navbar [query]="query"></cv-navbar>
+    <ng-content select=".container-content"></ng-content>
+
+  </div>
+  <!-- end primary content -->
+  <button id="fixed-plugin" mat-icon-button (click)="openDialog()" mat-tooltip="Have A Question?">
+    <mat-icon>help_outline</mat-icon>
+  </button>
+  <cv-footer></cv-footer>
+</mat-sidenav-container>

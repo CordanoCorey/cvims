@@ -1,0 +1,118 @@
+<form iuForm [formGroup]="form" [class.cart-item]="!preview" [class.cart-item-preview]="preview">
+  <mat-card class="collection" *ngIf="!preview">
+    <h4>
+      <a [routerLink]="productLink">{{ productName }}</a>
+    </h4>
+  </mat-card>
+  <mat-card class="cart-item-details">
+    <h4 *ngIf="preview">
+      <a [routerLink]="productLink">{{ productName }}</a>
+    </h4>
+    <div class="collection-item flex-container">
+
+      <mat-card-actions class="flex-item1" *ngIf="preview">
+        <img class="product-image" [src]="productImageSrc" />
+
+        <!-- Quantity In Cart -->
+        <mat-form-field class="quantity-in-cart">
+          <input matInput type="number" min="0" [max]="maxQuantity" placeholder="Change Quantity" formControlName="quantity" (click)="clickQuantity()">
+          <mat-hint>Quantity in stock: {{ quantityInStock }}</mat-hint>
+          <mat-error>Please enter a positive integer.</mat-error>
+          <mat-error>Quantity exceeds maximum availability.</mat-error>
+        </mat-form-field>
+        <!-- End Quantity In Cart -->
+
+        <button mat-button class="remove-item" (click)="onRemoveFromCart($event)">
+          <mat-icon>remove_circle</mat-icon> Remove Item
+        </button>
+      </mat-card-actions>
+
+      <div class="left" *ngIf="!preview">
+        <img class="product-image" [src]="productImageSrc" />
+      </div>
+
+      <mat-card-content class="flex-item">
+
+        <!-- Product Description -->
+        <div *ngIf="showDescription" class="product-decription" class="product-lookup">
+          <p>Product Description: {{ description }} </p>
+        </div>
+
+        <!-- Product SKU -->
+        <div class="product-sku">
+          <p>Item Number: {{ sku }} </p>
+        </div>
+
+        <!-- Product Size -->
+        <div *ngIf="hasSize" class="product-lookup">
+          <p>Size: {{ size }} </p>
+        </div>
+
+        <!-- Product In-Stock -->
+        <div *ngIf="inStock" class="product-in-stock">
+          <p>In Stock:
+            <mat-icon>done</mat-icon>
+          </p>
+        </div>
+        <div *ngIf="outOfStock" class="product-out-of-stock">
+          <p>In Stock:
+            <b>OUT OF STOCK</b>
+          </p>
+        </div>
+        <!-- End Product In-Stock -->
+
+        <!-- Product Price -->
+        <div class="product-price" *ngIf="isSchoolStore">
+          <p>Unit Price: {{ unitPrice | currency:'USD':true:'1.2' }} </p>
+        </div>
+        <!-- End Product Price -->
+
+        <!-- Hidden Fields (possibly make configurable later) -->
+        <input type="hidden" formControlName="id">
+        <input type="hidden" formControlName="userId">
+        <input type="hidden" formControlName="productId">
+
+        <!-- Quantity In Cart -->
+        <mat-form-field class="quantity-in-cart" *ngIf="!preview">
+          <input matInput type="number" min="0" [max]="maxQuantity" placeholder="Change Quantity" formControlName="quantity" (click)="clickQuantity()">
+          <mat-hint>Quantity in stock: {{ quantityInStock }}</mat-hint>
+          <mat-error>Please enter a positive integer.</mat-error>
+          <mat-error>Quantity exceeds maximum availability.</mat-error>
+        </mat-form-field>
+        <!-- End Quantity In Cart -->
+
+        <!-- Tax -->
+        <div class="taxable" *ngIf="isSchoolStore">
+          <p>Tax: {{ tax | currency:'USD':true:'1.2' }}</p>
+        </div>
+        <!-- End Tax -->
+
+        <!-- Product Total -->
+        <div class="product-total" *ngIf="preview && isSchoolStore">
+          <p>Item Total:
+            <span class="total-price">
+              {{ totalPrice | currency:'USD':true:'1.2' }}
+            </span>
+          </p>
+        </div>
+        <!-- End Product Total -->
+
+      </mat-card-content>
+
+      <mat-card-actions class="flex-item1" *ngIf="!preview">
+        <div class="product-total">
+          <p *ngIf="isSchoolStore">Item Total:
+            <span class="total-price">
+              {{ totalPrice | currency:'USD':true:'1.2' }}
+            </span>
+          </p>
+        </div>
+        <button mat-button class="remove-item" (click)="onRemoveFromCart($event)">
+          <mat-icon>remove_circle</mat-icon> Remove Item
+        </button>
+      </mat-card-actions>
+
+    </div>
+  </mat-card>
+
+</form>

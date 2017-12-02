@@ -1,0 +1,21 @@
+@import '~@angular/material/_theming';
+@import '~@caiu/common/src/styles';
+@import '../../common';
+cv-product-preview {
+   // @include mat-elevation(4);
+   // position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+   // resize: both;
+    //overflow: hidden;
+}
+
+mat-grid-tile{
+  @include mat-elevation(4);
+}
+
+.mat-card {
+  margin: 16px 0;
+}
+

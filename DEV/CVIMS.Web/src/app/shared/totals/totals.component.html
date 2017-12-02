@@ -1,0 +1,18 @@
+<div id="totals">
+  <div id="subtotal" class="total">
+    <h3>Subtotal:</h3>
+    <span class="total-dollars">{{ subtotal | currency:'USD':true:'1.2' }}</span>
+  </div>
+  <div id="tax" class="total">
+    <h3>Tax:</h3>
+    <span class="total-dollars">{{ tax | currency:'USD':true:'1.2' }}</span>
+  </div>
+  <div id="shipping-cost" class="total">
+    <h3>Shipping Cost:</h3>
+    <span class="total-dollars">{{ shippingCost | currency:'USD':true:'1.2' }}</span>
+  </div>
+  <div id="total" class="total">
+    <h3>Total:</h3>
+    <span class="total-dollars">{{ computedTotal | currency:'USD':true:'1.2' }}</span>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<iu-grid [model]="grid" height="420" [sort]="sort">
+
+  <!-- Product Name -->
+  <iu-grid-column [model]="orderNumberColumn" [templateRef]="orderNumberTemplate" width="360">
+    <ng-template #orderNumberTemplate let-orderNumber="orderNumber" let-orderId="orderId">
+      <a class="order-link" [routerLink]="getOrderLink(orderId)">
+        {{ orderNumber }}
+      </a>
+    </ng-template>
+  </iu-grid-column>
+  <!-- End Product Name -->
+
+  <!-- Last Modified -->
+  <iu-grid-column [model]="orderDateColumn" filter="date" format="{0:d}" [templateRef]="orderDateTemplate" width="192">
+    <ng-template #orderDateTemplate let-orderDate="orderDate">
+      <div class="centered">{{ orderDate | date:'shortDate' }}</div>
+    </ng-template>
+  </iu-grid-column>
+  <!-- End Last Modified -->
+
+  <!-- Quantity -->
+  <iu-grid-column [model]="customerNameColumn" [templateRef]="customerNameTemplate" [filterable]="false" width="200">
+    <ng-template #customerNameTemplate let-customerName="customerName">
+
+    </ng-template>
+  </iu-grid-column>
+  <!-- End Quantity -->
+
+</iu-grid>

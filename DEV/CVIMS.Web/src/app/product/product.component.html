@@ -1,0 +1,5 @@
+<div id="main-content">
+  <div id="product">
+    <cv-product-view [product]="product$ | async" (addToCart)="onAddToCart($event)" (removeFromCart)="onRemoveFromCart($event)" (updateCartItem)="onUpdateCartItem($event)"></cv-product-view>
+  </div>
+</div>

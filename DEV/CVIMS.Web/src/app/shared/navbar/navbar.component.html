@@ -1,0 +1,13 @@
+<div id="sub-header">
+  <mat-chip-list>
+    <mat-chip *ngFor="let queryItem of query" class="chip">
+      <span class="param-label">{{ queryItem?.label }}:</span>
+      <span class="param-value">{{ queryItem?.value }}</span>
+      <mat-icon mdChipRemove class="chip-icon">cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+  <a class="section-link" [routerLink]="categoriesLink">Products</a>
+  <a class="section-link" [routerLink]="categoriesLink">Categories</a>
+  <a class="section-link" [routerLink]="ordersLink">Orders</a>
+  <a class="section-link" [routerLink]="ordersLink">Reports</a>
+</div>
